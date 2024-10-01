@@ -1,0 +1,218 @@
+/* Đặt lại các giá trị mặc định */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    background-color: #fff; /* Màu nền sáng */
+    color: #111; /* Màu chữ chính */
+}
+
+/* Thanh điều hướng */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #111; /* Màu nền thanh điều hướng tối hơn */
+    padding: 10px 20px;
+    color: #fff; /* Màu chữ thanh điều hướng */
+    margin-bottom: 20px; /* Khoảng cách giữa thanh menu và nội dung */
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo {
+    height: 40px; /* Chiều cao logo */
+}
+
+.menu {
+    display: flex;
+    gap: 20px; /* Khoảng cách giữa các mục menu */
+}
+
+.menu a {
+    color: #fff; /* Màu chữ cho menu */
+    text-decoration: none; /* Không gạch chân */
+    padding: 8px 12px; /* Đệm cho các mục menu */
+    transition: background-color 0.3s, color 0.3s; /* Hiệu ứng chuyển tiếp */
+}
+
+.menu a:hover {
+    background-color: #555; /* Màu nền khi hover */
+    border-radius: 5px; /* Bo góc khi hover */
+}
+
+/* Phần bên phải của menu */
+.right-section {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Khoảng cách giữa các biểu tượng và nút */
+}
+
+.icon {
+    height: 25px; /* Chiều cao biểu tượng */
+    cursor: pointer; /* Con trỏ chuột khi hover */
+}
+
+/* Nút "Chơi Ngay" */
+.play-now-btn {
+    text-align: center;
+    background: rgb(11, 196, 226); /* Màu nền nút */
+    line-height: 16px;
+    position: relative;
+    z-index: 0; /* Đặt vị trí cho nút */
+    text-overflow: ellipsis; /* Đoạn văn dài sẽ được cắt */
+    height: 32px; /* Chiều cao nút */
+    border-radius: 12px; /* Bo góc cho nút */
+    padding: 8px 16px; /* Đệm cho nút */
+    color: #000; /* Màu chữ nút */
+    border: #000 solid 1px; /* Thêm viền cho nút */
+    transition: background-color 0.3s; /* Hiệu ứng chuyển tiếp cho nút */
+}
+
+.play-now-btn:hover {
+    background-color: #0077b3; /* Màu nền khi hover */
+}
+
+/* Nội dung chính */
+.content {
+    padding: 20px; /* Đệm cho nội dung chính */
+    text-align: center; /* Căn giữa nội dung */
+}
+
+.content h2 {
+    font-size: 1.3em; /* Kích thước chữ cho tiêu đề phụ */
+    color: #111; /* Màu chữ tiêu đề phụ */
+    font-weight: normal; /* Chữ không đậm cho "CHỌN NGAY MỘT" */
+    margin-bottom: 10px; /* Khoảng cách với phần dưới */
+}
+
+.content h1 {
+    font-size: 4em; /* Kích thước chữ lớn cho tiêu đề chính */
+    color: #000; /* Màu chữ tiêu đề chính */
+    font-weight: bold; /* Đậm chữ cho phần tiêu đề "TƯỚNG" */
+    font-style: oblique; /* In nghiêng chữ "TƯỚNG" */
+    margin-bottom: 20px; /* Tạo khoảng cách với đoạn văn phía dưới */
+}
+
+
+.content p {
+    margin: 20px 0; /* Khoảng cách trên và dưới */
+    font-size: 16px; /* Kích thước chữ */
+    color: #111; /* Màu chữ */
+    line-height: 1.5; /* Độ cao dòng để dễ đọc */
+}
+
+/* Hiển thị tướng */
+.champion-gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Đặt 4 cột với kích thước bằng nhau */
+    gap: 20px; /* Tạo khoảng cách giữa các ảnh */
+    padding: 20px; /* Đệm cho gallery */
+    margin-top: 30px; /* Khoảng cách với đoạn văn bên trên */
+}
+
+.champion-option {
+    position: relative; /* Cho phép vị trí tuyệt đối */
+    overflow: hidden; /* Giới hạn phần vượt ra ngoài khung */
+    border-radius: 10px; /* Bo góc cho khung */
+    background-color: rgb(10, 20, 40); /* Nền màu xanh cho khung */
+    cursor: pointer; /* Con trỏ chuột khi hover */
+    display: flex;
+    flex-direction: column; /* Sắp xếp nội dung theo cột */
+}
+
+.champion-option img {
+    width: 100%; /* Đảm bảo hình ảnh chiếm toàn bộ chiều rộng */
+    height: auto; /* Để chiều cao tự động theo tỷ lệ */
+    object-fit: cover; /* Đảm bảo hình ảnh không bị méo */
+    transition: transform 0.3s; /* Thêm hiệu ứng zoom */
+    z-index: 0; /* Đảm bảo ảnh nằm dưới phần tên */
+}
+
+.champion-option:hover img {
+    transform: scale(1.05); /* Phóng to nhẹ khi hover */
+}
+
+.champion-option p {
+    margin: 0; /* Xóa khoảng cách */
+    padding: 0 5px; /* Đệm ngang */
+    background-color: rgb(10, 20, 40); /* Nền màu xanh */
+    color: white; /* Màu chữ */
+    text-align: left; /* Căn trái tên tướng */
+    border-bottom-left-radius: 10px; /* Bo góc dưới bên trái */
+    border-bottom-right-radius: 10px; /* Bo góc dưới bên phải */
+    height: 43px; /* Chiều cao của khung chữ */
+    line-height: 43px; /* Căn chữ theo chiều dọc */
+    position: relative; /* Đặt vị trí cho phần tên */
+    z-index: 1; /* Đặt phần tên lên trên ảnh */
+    overflow: hidden; /* Đảm bảo phần nội dung không tràn ra ngoài */
+}
+
+/* Footer */
+.footer {
+    background-color: #000; /* Màu nền footer */
+    color: #fff; /* Màu chữ footer */
+    padding: 20px; /* Đệm cho footer */
+    text-align: center; /* Căn giữa nội dung trong footer */
+    display: flex;
+    flex-direction: column; /* Đặt hướng sắp xếp theo chiều dọc */
+    align-items: center; /* Căn giữa nội dung */
+}
+
+.footer-links,
+.social-media,
+.footer-bottom-links {
+    display: flex;
+    justify-content: center; /* Căn giữa các mục trong footer */
+    gap: 15px; /* Khoảng cách giữa các liên kết */
+    margin-bottom: 10px; /* Khoảng cách dưới mỗi phần */
+}
+
+.footer-links a,
+.footer-bottom-links a {
+    color: #fff; /* Màu chữ liên kết */
+    text-decoration: none; /* Không gạch chân */
+}
+
+.footer-links a:hover,
+.footer-bottom-links a:hover {
+    text-decoration: underline; /* Gạch chân khi hover */
+}
+
+.social-media img {
+    width: 24px; /* Kích thước biểu tượng mạng xã hội */
+    height: 24px;
+}
+
+.footer-brand {
+    display: flex;
+    justify-content: center; /* Căn giữa các thương hiệu */
+    gap: 15px; /* Khoảng cách giữa các logo thương hiệu */
+    margin: 10px 0; /* Khoảng cách trên và dưới cho thương hiệu */
+}
+
+.footer-brand img {
+    height: 30px; /* Chiều cao logo thương hiệu */
+}
+
+/* Cảnh báo độ tuổi */
+.age-warning {
+    display: flex;
+    align-items: center; /* Căn giữa các mục trong cảnh báo */
+    justify-content: center; /* Căn giữa nội dung */
+    gap: 10px; /* Khoảng cách giữa biểu tượng và chữ */
+    margin-top: 10px; /* Khoảng cách trên cho cảnh báo */
+}
+
+.age-warning img {
+    height: 24px; /* Chiều cao biểu tượng cảnh báo */
+}
