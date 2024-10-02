@@ -9,8 +9,8 @@
 <body>
     <header class="navbar">
         <div class="logo-container">
-            <img src="ảnh/logoriotgame.png" alt="Logo 1" class="logo">
-            <img src="ảnh/logoriotgame2.png" alt="Logo 2" class="logo">
+            <img src="ảnh/logoriotgame.png" alt="Logo 1" class="logo" width="150" height="50">
+            <img src="ảnh/logoriotgame2.png" alt="Logo 2" class="logo" width="150" height="50">
         </div>
         
         <nav class="menu">
@@ -24,8 +24,8 @@
         </nav>
         
         <div class="right-section">
-            <img src="ảnh/seachicon.png" alt="Search" class="icon search-icon">
-            <img src="ảnh/globeicon.png" alt="Language" class="icon globe-icon">
+            <img src="ảnh/seachicon.png" alt="Search" class="icon search-icon" width="30" height="30">
+            <img src="ảnh/globeicon.png" alt="Language" class="icon globe-icon" width="30" height="30">
             <button class="play-now-btn">CHƠI NGAY</button>
         </div>
     </header>
@@ -43,19 +43,19 @@
     </main>
 
     <footer class="footer">
-        <div class="footer-links">
+        <div class="footer-links-container">
             <a href="#">VỀ LIÊN MINH HUYỀN THOẠI</a>
             <a href="#">HỖ TRỢ</a>
             <a href="#">TRANG ESPORTS CHÍNH</a>
         </div>
         <div class="social-media">
-            <a href="#"><img src="ảnh/facebook-icon.png" alt="Facebook"></a>
-            <a href="#"><img src="ảnh/instagram-icon.png" alt="Instagram"></a>
-            <a href="#"><img src="ảnh/youtube-icon.png" alt="YouTube"></a>
+            <a href="#"><img src="ảnh/facebook-icon.png" alt="Facebook" width="30" height="30"></a>
+            <a href="#"><img src="ảnh/instagram-icon.png" alt="Instagram" width="30" height="30"></a>
+            <a href="#"><img src="ảnh/youtube-icon.png" alt="YouTube" width="30" height="30"></a>
         </div>
         <div class="footer-brand">
-            <img src="ảnh/riot-games-logo.png" alt="Riot Games">
-            <img src="ảnh/vng-games-logo.png" alt="VNG Games">
+            <img src="ảnh/logoriotgame.png" alt="Riot Games" width="150" height="50">
+            <img src="ảnh/vnggame.png" alt="VNG Games" width="150" height="50">
         </div>
         <p>© 2009-2022 bởi Tập Đoàn Riot Games. LIÊN MINH HUYỀN THOẠI và mọi logo liên quan là nhãn hiệu, nhãn dịch vụ và/hoặc nhãn hiệu đã đăng ký của Tập Đoàn Riot Games.</p>
         <div class="footer-bottom-links">
@@ -64,10 +64,33 @@
             <a href="#">TÙY CHỌN COOKIES</a>
         </div>
         <div class="age-warning">
-            <img src="C:\Users\CauBeTanh\.vscode\baithigiuakynhom1\ảnh\choigamequa180.png" alt="18+ Warning">
+            <img src="ảnh/choigamequa180.png" alt="18+ Warning" width="150" height="50">
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+        const champions = [
+            "AATROX", "AHRI", "AKALI", "AKSHAN", "ALISTAR", 
+            "AMUMU", "ANNIE", "ASHE", "AURELION_SOL", "BARD", 
+            "BELVETH", "BLITZCRANK", "BRAND", "BRAUM", "CAITLYN", 
+            "CAMILLE", "CASSIOPEIA", "CHO'GATH", "DARIUS", "DIANA", 
+            "DR. MUNDO", "DRAVEN", "EKKO", "ELISE", "EVELYNN", 
+            "FIDDLESTICKS", "FIORA", "FIZZ", "GALIO", "GANGPLANK", 
+            "GAREN", "GNAR", "GRAGAS", "GRAVES", "GWEN", 
+            "HECARIM", "HEIMERDINGER", "ILLAOI", "IRELIA", "JAX"
+        ];
+        const championsContainer = document.getElementById('champions');
+
+        champions.forEach(champion => {
+            const championDiv = document.createElement('div');
+            championDiv.classList.add('champion-option');
+            championDiv.innerHTML = `
+
+                <img src="ảnh/${champion}.webp" alt="${champion}" width="100" height="100">
+                <p>${champion}</p>
+            `;
+            championsContainer.appendChild(championDiv);
+        });
+    </script>
 </body>
 </html>
